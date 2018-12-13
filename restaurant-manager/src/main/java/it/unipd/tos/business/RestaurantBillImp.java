@@ -28,6 +28,7 @@ public class RestaurantBillImp implements RestaurantBill{
                                  .min().getAsDouble();
         }
         
+        
         if (final_price > 100) {
             final_price -= final_price/100.0*5.0;
         }

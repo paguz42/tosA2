@@ -13,12 +13,12 @@ import org.junit.Test;
 import it.unipd.tos.business.exception.RestaurantBillException;
 import it.unipd.tos.model.MenuItem;
 
-public class RestaurantBillImplTest {
+public class RestaurantBillImpTest {
 
 	@Test
 	public void getOrderPrice_Standard_Test() {
 		List<MenuItem> conto = new ArrayList<MenuItem>();
-		RestaurantBillImpl cassa = new RestaurantBillImpl();
+		RestaurantBillImp cassa = new RestaurantBillImp();
 		conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",23));
 		conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",24));
         conto.add(new MenuItem(MenuItem.itemType.PRIMI,"Spaghetti",2.5));
@@ -36,7 +36,7 @@ public class RestaurantBillImplTest {
 	@Test
 	public void getOrderPrice_MoreThan10Pizzas_Test() {
 	    List<MenuItem> conto = new ArrayList<MenuItem>();
-        RestaurantBillImpl cassa = new RestaurantBillImpl();
+        RestaurantBillImp cassa = new RestaurantBillImp();
         conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",13));
         conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",24));
         conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",2.5));
@@ -67,7 +67,7 @@ public class RestaurantBillImplTest {
 	@Test
 	public void getOrderPrice_MoreThan100Euros_Test() {
 	    List<MenuItem> conto = new ArrayList<MenuItem>();
-	    RestaurantBillImpl cassa = new RestaurantBillImpl();
+	    RestaurantBillImp cassa = new RestaurantBillImp();
 	    conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",13));
 	    conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",24));
 	    conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",2.5));
@@ -98,7 +98,7 @@ public class RestaurantBillImplTest {
 	@Test(expected = RestaurantBillException.class)
 	public void getOrderPrice_MoreThan20Items_Test() throws RestaurantBillException {
 	    List<MenuItem> conto = new ArrayList<MenuItem>();
-	    RestaurantBillImpl cassa = new RestaurantBillImpl();
+	    RestaurantBillImp cassa = new RestaurantBillImp();
 	    for(int i=1;i < 13;i++) {
 	        conto.add(new MenuItem(MenuItem.itemType.PIZZE,"Margherita",13));
 	        conto.add(new MenuItem(MenuItem.itemType.PRIMI,"Spaghetti",24));
